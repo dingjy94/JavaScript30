@@ -12,3 +12,8 @@ See requirment in code. Console the result in your console.
 
 ## Relevent Resources
 - [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+## TODO
+- immutable
+- test
+- array deep copy
