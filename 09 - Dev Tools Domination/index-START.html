@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<body>
+
+  <p onClick="makeGreen()">×BREAK×DOWN×</p>
+
+  <script>
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+    function makeGreen() {
+      const p = document.querySelector('p');
+      p.style.color = '#BADA55';
+      p.style.fontSize = '50px';
+    }
+
+    // Regular
+    console.log('Regular console log');
+    // Interpolated
+    console.log('Interplated console log this is the value: %s', 'I\'m value by %');
+
+    // Styled
+    console.log('%cstyled console', 'background: #222; color: #bada55')
+
+    // warning!
+    console.warn('This is a warning');
+
+    // Error :|
+    console.error('This is an error');
+
+    // Info
+    console.info('This is an info. This is identical to console.log.');
+
+    // Testing (check condition)
+    const x = 5;
+    const y = 3;
+    const reason = 'x is expected to be less than y';
+    console.assert(x < y, { x, y, reason });
+
+    // clearing
+    // console.clear();
+
+    // Viewing DOM Elements
+    const p = document.querySelector('p');
+    console.log(p);
+    console.dir(p); // JSON expression
+
+    // Grouping together
+    dogs.forEach((dog) => {
+      console.groupCollapsed(`${dog.name}`); // this will create a collapsed group
+      console.log(`This is ${dog.name}.`);
+      console.log(`He is ${dog.age} years old.`);
+      console.groupEnd(`${dog.name}`);
+    });
+
+    // counting
+    console.count('one');
+    console.count('two');
+    console.count('two');
+
+    // timing
+    console.time('time out 1000ms');
+    setTimeout(() => console.timeEnd('time out 1000ms'), 1000);
+
+  </script>
+</body>
+</html>
